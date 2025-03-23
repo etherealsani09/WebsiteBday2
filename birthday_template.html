@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR MAMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff5f7;
+            color: #5a4a4f;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-bottom: 40px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 20px 0 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background-color: #ffe8f0;
+            box-shadow: 0 8px 20px rgba(214, 87, 140, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .container-decor {
+            position: relative;
+            padding-top: 0px;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            color: #ff4d8d;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 3px rgba(255, 77, 141, 0.15);
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #c27ba0;
+            margin-bottom: 25px;
+        }
+
+        .cake-icon {
+            font-size: 3rem;
+            margin: 15px 0;
+            display: inline-block;
+            animation: bounce 2s infinite;
+            padding-top: 20px;
+        }
+        
+        .teddy-bear {
+            width: 120px;
+            height: 120px;
+            margin: 10px auto;
+            display: block;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Birthday Info Section */
+        .birthday-info {
+            background-color: white;
+            border-radius: 20px;
+            padding: 35px 40px;
+            margin: 30px auto;
+            box-shadow: 0 10px 25px rgba(214, 87, 140, 0.12);
+            position: relative;
+            max-width: 800px;
+            border: 2px dashed #ffc2d8;
+        }
+
+        .birthday-details {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .birthday-details h2 {
+            color: #ff4d8d;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .birthday-details p {
+            font-size: 1.25rem;
+            color: #c27ba0;
+            margin-bottom: 15px;
+            background-color: #fffafc;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            box-shadow: 0 3px 10px rgba(214, 87, 140, 0.08);
+        }
+
+        /* Envelope & Letter Section */
+        .envelope {
+            background: linear-gradient(135deg, #ffddec 0%, #fff5f7 100%);
+            border-radius: 18px;
+            padding: 30px;
+            max-width: 650px;
+            margin: 50px auto 60px;
+            box-shadow: 0 10px 30px rgba(214, 87, 140, 0.15);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid #ffd6e7;
+        }
+
+        .envelope:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 35px rgba(214, 87, 140, 0.2);
+        }
+
+        .envelope:after {
+            content: "💌";
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 2.5rem;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .envelope h2 {
+            text-align: center;
+            color: #ff4d8d;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        .letter {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-top: 25px;
+            display: none;
+            border: 1px solid #ffeef6;
+            box-shadow: 0 8px 20px rgba(214, 87, 140, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .letter p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+            margin-bottom: 15px;
+            color: #664e57;
+        }
+
+        .letter .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 35px;
+            font-size: 1.2rem;
+            color: #c27ba0;
+        }
+
+        /* Music Player Section */
+        .music-player {
+            background: linear-gradient(135deg, #fff0f7 0%, #fff7fc 100%);
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(214, 87, 140, 0.12);
+            max-width: 650px;
+            border: 2px solid #fff;
+        }
+
+        .music-player h2 {
+            color: #ff4d8d;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .music-controls {
+            margin: 25px 0;
+        }
+
+        .music-controls button {
+            background: linear-gradient(to right, #ff4d8d, #ff85ad);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            margin: 0 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 77, 141, 0.3);
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .music-controls button:hover {
+            background: linear-gradient(to right, #ff3a7f, #ff6d9e);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(255, 77, 141, 0.4);
+        }
+
+        .music-controls button:active {
+            transform: translateY(1px);
+        }
+
+        /* Decorations */
+        .decoration {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.7;
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .decoration-1 {
+            top: 60px;
+            left: -30px;
+            font-size: 3.5rem;
+            color: #ffb8d2;
+            transform: rotate(-20deg);
+        }
+
+        .decoration-2 {
+            bottom: 100px;
+            right: -20px;
+            font-size: 4.5rem;
+            color: #ffc8dc;
+            transform: rotate(15deg);
+        }
+
+        .decoration-3 {
+            top: 220px;
+            right: 80px;
+            font-size: 3rem;
+            color: #ffb8d2;
+            transform: rotate(10deg);
+        }
+
+        .decoration-4 {
+            bottom: 240px;
+            left: 60px;
+            font-size: 4rem;
+            color: #ffc8dc;
+            transform: rotate(-10deg);
+        }
+
+        /* Confetti Styles */
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background-color: #ff4d8d;
+            opacity: 0.7;
+            position: absolute;
+            top: -20px;
+            z-index: 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .birthday-info {
+                padding: 25px 20px;
+            }
+            
+            .envelope {
+                padding: 25px 20px;
+            }
+            
+            .letter {
+                padding: 25px 20px;
+            }
+            
+            .decoration {
+                opacity: 0.4;
+                font-size: 2rem !important;
+            }
+            
+            .decoration-1 {
+                top: 20px;
+                left: 10px;
+            }
+            
+            .decoration-2 {
+                bottom: 50px;
+                right: 10px;
+            }
+            
+            .decoration-3, .decoration-4 {
+                display: none;
+            }
+            
+            .music-controls button {
+                padding: 10px 20px;
+                margin: 5px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="cake-icon">🎂</div>
+            <div class="container-decor">
+                <h1>Selamat Ulang Tahun, Mama!</h1>
+                <p class="subtitle">Terima kasih telah menjadi ibu terbaik di dunia</p>
+                
+                <!-- SVG Teddy Bear -->
+                <svg class="teddy-bear" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Body -->
+                    <ellipse cx="100" cy="110" rx="60" ry="55" fill="#f8b8d4" />
+                    
+                    <!-- Head -->
+                    <circle cx="100" cy="60" r="40" fill="#f8b8d4" />
+                    
+                    <!-- Ears -->
+                    <circle cx="65" cy="30" r="15" fill="#f8b8d4" />
+                    <circle cx="135" cy="30" r="15" fill="#f8b8d4" />
+                    
+                    <!-- Inner ears -->
+                    <circle cx="65" cy="30" r="8" fill="#ffabc8" />
+                    <circle cx="135" cy="30" r="8" fill="#ffabc8" />
+                    
+                    <!-- Eyes -->
+                    <circle cx="85" cy="55" r="5" fill="#4d4d4d" />
+                    <circle cx="115" cy="55" r="5" fill="#4d4d4d" />
+                    
+                    <!-- Eye highlights -->
+                    <circle cx="83" cy="53" r="2" fill="white" />
+                    <circle cx="113" cy="53" r="2" fill="white" />
+                    
+                    <!-- Nose -->
+                    <ellipse cx="100" cy="70" rx="8" ry="6" fill="#ff8ab4" />
+                    
+                    <!-- Mouth -->
+                    <path d="M90,80 Q100,90 110,80" stroke="#ff8ab4" stroke-width="2" fill="none" />
+                    
+                    <!-- Arms -->
+                    <ellipse cx="50" cy="110" rx="15" ry="30" fill="#f8b8d4" />
+                    <ellipse cx="150" cy="110" rx="15" ry="30" fill="#f8b8d4" />
+                    
+                    <!-- Legs -->
+                    <ellipse cx="75" cy="160" rx="15" ry="25" fill="#f8b8d4" />
+                    <ellipse cx="125" cy="160" rx="15" ry="25" fill="#f8b8d4" />
+                    
+                    <!-- Belly -->
+                    <ellipse cx="100" cy="110" rx="30" ry="25" fill="#ffabc8" />
+                    
+                    <!-- Heart accessory -->
+                    <path d="M100,95 L90,85 Q85,80 90,75 Q95,70 100,75 Q105,70 110,75 Q115,80 110,85 Z" fill="#ff6d9e" />
+                </svg>
+            </div>
+        </header>
+        
+        <div class="birthday-info">
+            <div class="birthday-details">
+                <h2>Hari Spesial Mama</h2>
+                <p id="age-display">Usia: <span id="age">45</span> tahun</p>
+                <p id="date-display">Tanggal: <span id="birthday-date">28 Maret 2025</span></p>
+            </div>
+        </div>
+        
+        <div class="envelope" id="envelope">
+            <h2>Ketuk untuk membuka surat spesial</h2>
+            <div class="letter" id="letter">
+                <p>Ibu tersayang,</p>
+                <p>Di hari yang istimewa ini, aku ingin mengucapkan selamat ulang tahun yang paling bahagia untukmu. Terima kasih untuk semua pengorbanan, cinta, dan kasih sayang yang telah Ibu berikan selama ini.</p>
+                <p>Sejak kecil, Ibu selalu ada untukku, mengajariku tentang kehidupan, memberikan dukungan di saat-saat sulit, dan merayakan bersamaku di saat-saat bahagia. Setiap nasihat dan pelukan Ibu telah membentukku menjadi pribadi yang sekarang.</p>
+                <p>Semoga di hari ulang tahun ini, Ibu selalu diberikan kesehatan, kebahagiaan, dan umur yang panjang. Aku berjanji akan selalu berusaha membuat Ibu bangga dan bahagia.</p>
+                <p>Sekali lagi, selamat ulang tahun, Ibu. Semoga tahun ini membawa lebih banyak kebahagiaan dan keberuntungan dalam hidup Ibu.</p>
+                <p class="signature">Dengan cinta dan kasih sayang,<br>Anakmu</p>
+            </div>
+        </div>
+        
+        <div class="music-player">
+            <h2>Lagu Ulang Tahun</h2>
+            <div class="music-controls">
+                <button id="play-button">Putar Lagu</button>
+                <button id="stop-button">Berhenti</button>
+            </div>
+        </div>
+        
+        <!-- Decorations -->
+        <div class="decoration decoration-1">🎀</div>
+        <div class="decoration decoration-2">🌸</div>
+        <div class="decoration decoration-3">🎁</div>
+        <div class="decoration decoration-4">✨</div>
+    </div>
+    
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Envelope interaction
+            const envelope = document.getElementById('envelope');
+            const letter = document.getElementById('letter');
+            
+            envelope.addEventListener('click', function() {
+                if (letter.style.display === 'block') {
+                    letter.style.display = 'none';
+                } else {
+                    letter.style.display = 'block';
+                    createConfetti(); // Create confetti when letter is opened
+                }
+            });
+            
+            // Birthday song functionality using Web Audio API
+            const playButton = document.getElementById('play-button');
+            const stopButton = document.getElementById('stop-button');
+            
+            let audioContext;
+            let isPlaying = false;
+            let currentNoteIndex = 0;
+            let nextNoteTime = 0;
+            let scheduledNotes = [];
+            
+            // Birthday song notes sequence
+            const birthdaySong = [
+                { note: 'C4', duration: 0.25 },
+                { note: 'C4', duration: 0.25 },
+                { note: 'D4', duration: 0.5 },
+                { note: 'C4', duration: 0.5 },
+                { note: 'F4', duration: 0.5 },
+                { note: 'E4', duration: 1 },
+                
+                { note: 'C4', duration: 0.25 },
+                { note: 'C4', duration: 0.25 },
+                { note: 'D4', duration: 0.5 },
+                { note: 'C4', duration: 0.5 },
+                { note: 'G4', duration: 0.5 },
+                { note: 'F4', duration: 1 },
+                
+                { note: 'C4', duration: 0.25 },
+                { note: 'C4', duration: 0.25 },
+                { note: 'C5', duration: 0.5 },
+                { note: 'A4', duration: 0.5 },
+                { note: 'F4', duration: 0.5 },
+                { note: 'E4', duration: 0.5 },
+                { note: 'D4', duration: 0.5 },
+                
+                { note: 'A#4', duration: 0.25 },
+                { note: 'A#4', duration: 0.25 },
+                { note: 'A4', duration: 0.5 },
+                { note: 'F4', duration: 0.5 },
+                { note: 'G4', duration: 0.5 },
+                { note: 'F4', duration: 1 },
+            ];
+            
+            // Note frequency mapping
+            const noteFrequencies = {
+                'C4': 261.63,
+                'D4': 293.66,
+                'E4': 329.63,
+                'F4': 349.23,
+                'G4': 392.00,
+                'A4': 440.00,
+                'A#4': 466.16,
+                'C5': 523.25
+            };
+            
+            function playNote(time, note, duration) {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.value = noteFrequencies[note];
+                
+                gainNode.gain.setValueAtTime(0.5, time);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, time + duration - 0.05);
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.start(time);
+                oscillator.stop(time + duration);
+                
+                return oscillator;
+            }
+            
+            function scheduleNotes() {
+                while (nextNoteTime < audioContext.currentTime + 0.2) {
+                    const noteInfo = birthdaySong[currentNoteIndex];
+                    const noteTime = nextNoteTime;
+                    const noteDuration = noteInfo.duration;
+                    
+                    scheduledNotes.push(playNote(noteTime, noteInfo.note, noteDuration));
+                    
+                    nextNoteTime += noteDuration;
+                    currentNoteIndex = (currentNoteIndex + 1) % birthdaySong.length;
+                }
+                
+                if (isPlaying) {
+                    requestAnimationFrame(scheduleNotes);
+                }
+            }
+            
+            playButton.addEventListener('click', function() {
+                if (!audioContext) {
+                    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                
+                if (!isPlaying) {
+                    isPlaying = true;
+                    currentNoteIndex = 0;
+                    nextNoteTime = audioContext.currentTime;
+                    scheduleNotes();
+                    createConfetti();
+                }
+            });
+            
+            stopButton.addEventListener('click', function() {
+                isPlaying = false;
+                
+                // Stop all scheduled notes
+                scheduledNotes.forEach(note => {
+                    try {
+                        note.stop();
+                    } catch (e) {
+                        // Note already stopped
+                    }
+                });
+                scheduledNotes = [];
+            });
+            
+            // Create confetti animation
+            function createConfetti() {
+                const confettiColors = ['#ff4d8d', '#ffb8d2', '#ffc8dc', '#ffacc6', '#ff85ad'];
+                const confettiShapes = ['circle', 'square', 'triangle'];
+                const container = document.querySelector('.container');
+                
+                for (let i = 0; i < 60; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.classList.add('confetti');
+                        
+                        // Random position
+                        const left = Math.random() * 100;
+                        
+                        // Style the confetti
+                        confetti.style.left = left + 'vw';
+                        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                        confetti.style.width = (Math.random() * 10 + 8) + 'px';
+                        confetti.style.height = (Math.random() * 10 + 8) + 'px';
+                        confetti.style.opacity = Math.random() + 0.3;
+                        
+                        // Random shape
+                        const shape = confettiShapes[Math.floor(Math.random() * confettiShapes.length)];
+                        if (shape === 'circle') {
+                            confetti.style.borderRadius = '50%';
+                        } else if (shape === 'triangle') {
+                            confetti.style.width = '0';
+                            confetti.style.height = '0';
+                            confetti.style.borderLeft = '10px solid transparent';
+                            confetti.style.borderRight = '10px solid transparent';
+                            confetti.style.borderBottom = '20px solid ' + confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                            confetti.style.backgroundColor = 'transparent';
+                        }
+                        
+                        // Fall animation
+                        confetti.style.transition = 'transform ' + (Math.random() * 3 + 3) + 's linear, top ' + (Math.random() * 3 + 3) + 's cubic-bezier(0.45, 0, 0.55, 1)';
+                        confetti.style.transform = 'rotate(' + (Math.random() * 360) + 'deg)';
+                        
+                        container.appendChild(confetti);
+                        
+                        // Start animation after a tiny delay
+                        setTimeout(() => {
+                            confetti.style.top = '100vh';
+                            confetti.style.transform = 'rotate(' + (Math.random() * 360 + 360) + 'deg)';
+                        }, 10);
+                        
+                        // Remove confetti after animation
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 6000);
+                    }, Math.random() * 1500);
+                }
+            }
+            
+            // Run when page loads
+            window.onload = function() {
+                // Create initial confetti
+                setTimeout(function() {
+                    try {
+                        createConfetti();
+                    } catch(e) {
+                        console.log('Error creating initial confetti');
+                    }
+                }, 1000);
+            };
+        });
+    </script>
+</body>
+</html>
